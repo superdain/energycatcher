@@ -170,7 +170,7 @@ a {
 }
 
 .service-name {
-    color: var(--text-main);
+    color: var(--primary);
     letter-spacing: -0.5px;
 }
 
@@ -710,6 +710,10 @@ a {
     letter-spacing: -1px;
 }
 
+.contact-title span {
+    color: var(--primary);
+}
+
 .contact-intro {
     font-size: 1.1rem;
     color: var(--text-muted);
@@ -873,3 +877,865 @@ a {
         padding: 32px 24px;
     }
 }
+
+/* =================================
+   Legal Page (Terms & Privacy) Styles
+   ================================= */
+.legal-page-sec {
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 120px;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    background-color: var(--bg-light);
+}
+
+.legal-container {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+}
+
+.legal-sidebar-col {
+    flex: 0 0 260px;
+    position: sticky;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.legal-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 12px;
+    border-radius: var(--radius-md);
+}
+
+.legal-tab-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.legal-tab-btn:hover {
+    color: var(--primary);
+    background-color: rgba(244, 90, 90, 0.05);
+}
+
+.legal-tab-btn.active {
+    color: white;
+    background-color: var(--primary);
+}
+
+.legal-nav {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+}
+
+.legal-nav h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.legal-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.legal-nav-link {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+    display: block;
+    line-height: 1.4;
+    padding: 6px 0;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+}
+
+.legal-nav-link:hover {
+    color: var(--primary);
+    border-left-color: var(--primary-light);
+}
+
+.legal-content-col {
+    flex: 1;
+    max-width: 850px;
+}
+
+.legal-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    box-shadow: var(--shadow-md);
+}
+
+.legal-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+.legal-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.legal-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.legal-body {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.legal-body section {
+    margin-bottom: 40px;
+    scroll-margin-top: 120px; /* offset for fixed navbar */
+}
+
+.legal-body h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding-bottom: 8px;
+}
+
+.legal-body p {
+    margin-bottom: 16px;
+    color: #334155;
+}
+
+.legal-body ul, .legal-body ol {
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+.legal-body li {
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+/* Legal Responsive */
+@media (max-width: 992px) {
+    .legal-container {
+        flex-direction: column;
+        gap: 32px;
+        align-items: stretch;
+    }
+    
+    .legal-sidebar-col {
+        position: static;
+        flex: none;
+        width: 100%;
+    }
+    
+    .legal-tabs {
+        flex-direction: row;
+    }
+    
+    .legal-tab-btn {
+        flex: 1;
+        justify-content: center;
+    }
+    
+    .legal-nav {
+        display: none; /* Hide detailed sidebar TOC list on mobile */
+    }
+    
+    .legal-card {
+        padding: 32px 24px;
+    }
+    
+    .legal-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* =================================
+   Service Status Page Styles
+   ================================= */
+.status-page-sec {
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 120px;
+    min-height: calc(100vh - 80px);
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+.status-main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.status-master-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.status-master-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.status-pulse-indicator {
+    width: 24px;
+    height: 24px;
+    background-color: #10B981;
+    border-radius: 50%;
+    position: relative;
+    animation: live-pulse 2s infinite;
+}
+
+@keyframes live-pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+    }
+}
+
+.status-master-text h1 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.status-master-text p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.status-refresh-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.status-refresh-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.status-section {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-sm);
+}
+
+.status-sec-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-main);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-sec-title span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+/* Component Row List */
+.status-components-list {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.component-item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.component-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.component-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.component-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+
+.component-state-badge {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+}
+
+.component-state-badge.warning {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: #F59E0B;
+}
+
+.component-uptime {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Uptime History Bar Graph */
+.uptime-history-graph {
+    display: flex;
+    gap: 3px;
+    align-items: flex-end;
+    height: 36px;
+    width: 100%;
+}
+
+.uptime-day-bar {
+    flex: 1;
+    height: 100%;
+    background-color: #10B981;
+    border-radius: 2px;
+    transition: transform 0.1s ease, opacity 0.1s ease;
+    cursor: pointer;
+}
+
+.uptime-day-bar.incident {
+    background-color: #F59E0B;
+}
+
+.uptime-day-bar:hover {
+    transform: scaleY(1.15);
+    opacity: 0.85;
+}
+
+.uptime-graph-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.03);
+    padding-top: 8px;
+}
+
+/* Stats Cards Grid */
+.status-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.stat-icon-wrapper {
+    width: 52px;
+    height: 52px;
+    background-color: var(--primary-light);
+    border-radius: 12px;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* Incident Feed */
+.incident-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.incident-card {
+    border-left: 3px solid var(--border-color);
+    padding-left: 20px;
+}
+
+.incident-card.resolved {
+    border-left-color: #10B981;
+}
+
+.incident-card.active-alert {
+    border-left-color: var(--primary);
+}
+
+.incident-time {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.incident-header-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.incident-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.incident-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+}
+
+.incident-description {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.no-incidents {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 12px 0;
+}
+
+/* Status Page Responsive */
+@media (max-width: 768px) {
+    .status-page-sec {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+    .status-master-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 24px;
+    }
+    .status-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .status-section {
+        padding: 32px 24px;
+    }
+    .status-stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .uptime-history-graph {
+        gap: 2px;
+    }
+}
+
+/* =================================
+   Help Center (FAQ) Page Styles
+   ================================= */
+.help-page-sec {
+    position: relative;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    min-height: calc(100vh - 80px);
+    background-color: var(--bg-light);
+    overflow: hidden;
+}
+
+.help-hero-content {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 56px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.help-title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -1px;
+}
+
+.help-title span {
+    color: var(--primary);
+}
+
+.help-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+.help-search-container {
+    width: 100%;
+    position: relative;
+    max-width: 550px;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-md);
+}
+
+.help-search-input {
+    width: 100%;
+    padding: 16px 20px 16px 52px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background-color: white;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.help-search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(244, 90, 90, 0.1);
+}
+
+.help-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+/* Category Tabs */
+.faq-tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.faq-tab-btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.faq-tab-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary-light);
+    background-color: white;
+}
+
+.faq-tab-btn.active {
+    color: white;
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 4px 10px rgba(244, 90, 90, 0.2);
+}
+
+/* FAQ Accordion */
+.faq-accordion-list {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-card-item {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.faq-card-item:hover {
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-question-btn {
+    width: 100%;
+    padding: 24px 32px;
+    background: none;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    color: var(--text-main);
+}
+
+.faq-q-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.faq-q-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.faq-q-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.faq-chevron {
+    color: var(--text-muted);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-card-item.active {
+    border-color: rgba(244, 90, 90, 0.3);
+    background-color: white;
+}
+
+.faq-card-item.active .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--primary);
+}
+
+.faq-card-item.active .faq-q-text {
+    color: var(--primary);
+}
+
+.faq-answer-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(244, 90, 90, 0.01);
+}
+
+.faq-answer-content {
+    padding: 0 32px 32px 32px;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.7;
+    border-top: 1px solid rgba(0,0,0,0.02);
+    padding-top: 20px;
+}
+
+.faq-answer-content p {
+    margin-bottom: 12px;
+}
+
+.faq-answer-content p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-no-results {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Contact Banner */
+.help-contact-banner {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.help-contact-banner .banner-bg-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--primary);
+    opacity: 0.15;
+    filter: blur(50px);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -100px;
+    pointer-events: none;
+}
+
+.help-contact-banner h2 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.help-contact-banner p {
+    color: #94a3b8;
+    margin-bottom: 32px;
+    font-size: 1rem;
+}
+
+/* Responsive Help */
+@media (max-width: 768px) {
+    .help-page-sec {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+    .help-title {
+        font-size: 2.25rem;
+    }
+    .faq-q-text {
+        font-size: 0.95rem;
+    }
+    .faq-question-btn {
+        padding: 20px;
+    }
+    .faq-answer-content {
+        padding: 0 20px 20px 20px;
+        padding-top: 16px;
+    }
+    .help-contact-banner {
+        padding: 32px 24px;
+    }
+    .help-contact-banner h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+

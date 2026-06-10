@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서비스 상태 - ENERGY CATCHER | DainSynergy</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ENERGY CATCHER 서비스 운영 및 시스템 가동 상태. 실시간 장비 모니터링 시스템의 안정성과 가동현황 지표를 투명하게 공개합니다.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar (Header) -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container container">
+            <div class="brand">
+                <a href="index.html#hero" class="brand-link">
+                    <span class="logo-dot"></span>
+                    <span class="service-name">ENERGY CATCHER</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html#features" class="nav-link">기능 소개</a>
+                <a href="index.html#download" class="nav-link">다운로드</a>
+                <a href="contact.html" class="nav-link">문의하기</a>
+                <a href="index.html#download" class="btn btn-primary nav-btn">무료로 시작하기</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="메뉴 열기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section class="status-page-sec">
+            <div class="hero-bg-layer">
+                <div class="gradient-blob form-1"></div>
+                <div class="gradient-blob form-2"></div>
+            </div>
+            
+            <div class="status-main-container">
+                <!-- Master Status Card -->
+                <div class="status-master-card">
+                    <div class="status-master-info">
+                        <div class="status-pulse-indicator"></div>
+                        <div class="status-master-text">
+                            <h1>모든 시스템 정상 작동 중</h1>
+                            <p>ENERGY CATCHER의 모든 서버 및 모니터링 시스템이 원활하게 운영되고 있습니다.</p>
+                        </div>
+                    </div>
+                    <button class="status-refresh-btn" onclick="refreshStatus()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                        새로고침
+                    </button>
+                </div>
+
+                <!-- Component Status Section -->
+                <div class="status-section">
+                    <h2 class="status-sec-title">
+                        시스템 구성 요소별 가동률
+                        <span>과거 90일 가동 기록</span>
+                    </h2>
+                    
+                    <div class="status-components-list">
+                        <!-- Component 1 -->
+                        <div class="component-item">
+                            <div class="component-header">
+                                <div class="component-info">
+                                    <span class="component-name">실시간 데이터 수집 서버 (Data Ingestion)</span>
+                                    <span class="component-state-badge">정상 작동</span>
+                                </div>
+                                <span class="component-uptime">99.98% 가동</span>
+                            </div>
+                            <div class="uptime-history-graph" data-component="ingest"></div>
+                            <div class="uptime-graph-footer">
+                                <span>90일 전</span>
+                                <span>100% 가동률</span>
+                                <span>오늘</span>
+                            </div>
+                        </div>
+
+                        <!-- Component 2 -->
+                        <div class="component-item">
+                            <div class="component-header">
+                                <div class="component-info">
+                                    <span class="component-name">시계열 데이터베이스 & 저장소 (Database & Storage)</span>
+                                    <span class="component-state-badge">정상 작동</span>
+                                </div>
+                                <span class="component-uptime">100.00% 가동</span>
+                            </div>
+                            <div class="uptime-history-graph" data-component="db"></div>
+                            <div class="uptime-graph-footer">
+                                <span>90일 전</span>
+                                <span>100% 가동률</span>
+                                <span>오늘</span>
+                            </div>
+                        </div>
+
+                        <!-- Component 3 -->
+                        <div class="component-item">
+                            <div class="component-header">
+                                <div class="component-info">
+                                    <span class="component-name">대시보드 API 서비스 (Web/App API)</span>
+                                    <span class="component-state-badge">정상 작동</span>
+                                </div>
+                                <span class="component-uptime">99.97% 가동</span>
+                            </div>
+                            <div class="uptime-history-graph" data-component="api"></div>
+                            <div class="uptime-graph-footer">
+                                <span>90일 전</span>
+                                <span>100% 가동률</span>
+                                <span>오늘</span>
+                            </div>
+                        </div>
+
+                        <!-- Component 4 -->
+                        <div class="component-item">
+                            <div class="component-header">
+                                <div class="component-info">
+                                    <span class="component-name">스마트 알림 & 푸시 게이트웨이 (Alert Dispatcher)</span>
+                                    <span class="component-state-badge">정상 작동</span>
+                                </div>
+                                <span class="component-uptime">99.99% 가동</span>
+                            </div>
+                            <div class="uptime-history-graph" data-component="push"></div>
+                            <div class="uptime-graph-footer">
+                                <span>90일 전</span>
+                                <span>100% 가동률</span>
+                                <span>오늘</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cumulative Service Metrics -->
+                <div>
+                    <h2 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main);">누적 서비스 운영 현황</h2>
+                    <div class="status-stats-grid">
+                        <!-- Stat 1 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <div class="stat-text">
+                                <span class="stat-num">12,480+ 대</span>
+                                <span class="stat-label">실시간 관제 중인 산업 장비</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Stat 2 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                            </div>
+                            <div class="stat-text">
+                                <span class="stat-num">145억+ 건</span>
+                                <span class="stat-label">누적 수집 및 처리 데이터</span>
+                            </div>
+                        </div>
+
+                        <!-- Stat 3 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                            </div>
+                            <div class="stat-text">
+                                <span class="stat-num">894,320+ 건</span>
+                                <span class="stat-label">누적 이상 징후 예방 알림</span>
+                            </div>
+                        </div>
+
+                        <!-- Stat 4 -->
+                        <div class="stat-card">
+                            <div class="stat-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div class="stat-text">
+                                <span class="stat-num">0.12초</span>
+                                <span class="stat-label">평균 알림 전송 지연 시간</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Past Incidents Section -->
+                <div class="status-section">
+                    <h2 class="status-sec-title">최근 인시던트 이력 (최근 90일)</h2>
+                    <div class="incident-list">
+                        <!-- Incident 1 -->
+                        <div class="incident-card resolved">
+                            <div class="incident-time">2026년 3월 5일 14:20 - 14:25 (KST)</div>
+                            <div class="incident-header-row">
+                                <span class="incident-title">일부 알림 및 푸시 메시지 전송 지연</span>
+                                <span class="incident-badge">해결됨</span>
+                            </div>
+                            <p class="incident-description">
+                                일시적인 외부 푸시 발송 파트너사 게이트웨이의 트래픽 집중으로 인해 모바일 푸시 알림 전송이 약 5분간 지연되었습니다.
+                                당사 서비스 장애 대응 프로토콜에 따라 예비 게이트웨이 노드로 자동 스케일아웃 및 세션 전환 조치하여 안정화시켰습니다.
+                                (이 사건 동안 실시간 원시 데이터 수집 및 웹 기반 대시보드는 100% 정상 작동하였습니다.)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="f-logo">ENERGY CATCHER</div>
+                <p class="f-desc">산업 현장의 모든 맥박을 잡다. 스마트 장비 모니터링 솔루션.</p>
+                <div class="f-company-info">
+                    <p class="company-detail">주식회사 다인시너지 (DainSynergy Co., Ltd.)</p>
+                    <p class="company-detail">대표이사: 김건후 | 사업자등록번호: 120-88-12345</p>
+                    <p class="company-detail">주소: 서울 강동구 천호대로 1037, 9층</p>
+                    <p class="company-detail">대표번호: 02-487-5989 | 이메일: contact@energycatcher.co.kr</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-col">
+                    <h4>제품</h4>
+                    <a href="index.html#">ENERGY CATCHER</a>
+                    <a href="index.html#features">기능 소개</a>
+                    <a href="index.html#download">다운로드</a>
+                </div>
+                <div class="link-col">
+                    <h4>고객지원</h4>
+                    <a href="contact.html">문의하기</a>
+                    <a href="help.html">도움말 센터</a>
+                    <a href="status.html">서비스 상태</a>
+                </div>
+                <div class="link-col">
+                    <h4>약관</h4>
+                    <a href="terms.html">이용약관</a>
+                    <a href="privacy.html">개인정보처리방침</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 DainSynergy. All rights reserved.</p>
+                <p class="contact-email">contact@energycatcher.co.kr</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script>
+        // Navbar Scrolled Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggling
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Dynamic Uptime Grid Rendering
+        const componentGraphs = document.querySelectorAll('.uptime-history-graph');
+        componentGraphs.forEach(graph => {
+            const componentId = graph.dataset.component;
+            for (let i = 0; i < 90; i++) {
+                const bar = document.createElement('div');
+                bar.classList.add('uptime-day-bar');
+                
+                // Add fake incidents based on index (90 days total, let's put it on specific indexes)
+                if (componentId === 'api' && i === 68) {
+                    bar.classList.add('incident');
+                    bar.title = '90일 중 69일 전: API 단시간 네트워크 병목 (99.85% 가동)';
+                } else if (componentId === 'push' && i === 85) {
+                    bar.classList.add('incident');
+                    bar.title = '90일 중 86일 전: 푸시 게이트웨이 트래픽 집중 지연 (99.95% 가동)';
+                } else {
+                    bar.title = `90일 중 ${i + 1}일 전: 정상 운영 (100% 가동)`;
+                }
+                graph.appendChild(bar);
+            }
+        });
+
+        // Refresh Action Simulation
+        function refreshStatus() {
+            const refreshBtn = document.querySelector('.status-refresh-btn');
+            refreshBtn.disabled = true;
+            refreshBtn.innerHTML = `
+                <svg class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                확인 중...
+            `;
+            
+            // Add spin keyframe dynamically if not present
+            if (!document.getElementById('spin-keyframe')) {
+                const style = document.createElement('style');
+                style.id = 'spin-keyframe';
+                style.innerHTML = `
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            setTimeout(() => {
+                refreshBtn.disabled = false;
+                refreshBtn.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                    새로고침
+                `;
+                alert('시스템 상태가 최신 상태입니다. (모든 구성 요소 정상 운영 중)');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

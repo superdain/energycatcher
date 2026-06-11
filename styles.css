@@ -480,9 +480,7 @@ a {
 .dl-icon {
     width: 72px;
     height: 72px;
-    background-color: var(--text-main);
-    color: var(--bg-white);
-    border-radius: 50%;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -490,9 +488,14 @@ a {
 }
 
 .dl-icon.desktop-icon {
-    background-color: var(--bg-light);
-    color: var(--text-main);
-    border: 1px solid var(--border-color);
+    background-color: transparent;
+    border: none;
+}
+
+.dl-icon img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
 }
 
 .download-box h3 {

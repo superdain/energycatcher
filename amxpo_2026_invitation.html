@@ -227,9 +227,51 @@ h2{margin:0;color:var(--navy);font-size:clamp(30px,3.4vw,48px);line-height:1.18;
 </footer>
 <div class="mobile-bar"><a class="btn primary" href="https://amxpo2026kor.govent.kr/" target="_blank" rel="noopener">무료 참관 등록하기 →</a></div>
 <script>
-async function shareInvite(){
- const data={title:'ENERGY CATCHER | AMXPO 2026 초청',text:'보이지 않던 에너지 비용, 이제 직접 확인하세요. KINTEX 1Hall 부스 1A31에서 만나보세요.',url:location.href};
- try{if(navigator.share){await navigator.share(data)}else{await navigator.clipboard.writeText(location.href);alert('초청장 주소를 복사했습니다.')}}catch(e){}
+async function shareInvite() {
+  const shareData = {
+    title: 'ENERGY CATCHER | AMXPO 2026 초청',
+    text: '보이지 않던 에너지 비용, 이제 직접 확인하세요. KINTEX 1Hall 부스 1A31',
+    url: window.location.href
+  };
+
+  // 1. Web Share API (Mobile / Modern Browsers for HTTP/HTTPS URLs)
+  if (navigator.share && window.location.protocol.startsWith('http')) {
+    try {
+      await navigator.share(shareData);
+      return;
+    } catch (err) {
+      if (err.name === 'AbortError') return; // User canceled share
+    }
+  }
+
+  // 2. Clipboard API
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(window.location.href);
+      alert('초청장 링크가 클립보드에 복사되었습니다.\n원하는 곳에 붙여넣기(Ctrl+V)하세요.');
+      return;
+    }
+  } catch (err) {}
+
+  // 3. Legacy Textarea Copy Fallback
+  try {
+    const tempInput = document.createElement('textarea');
+    tempInput.value = window.location.href;
+    tempInput.style.position = 'fixed';
+    tempInput.style.opacity = '0';
+    document.body.appendChild(tempInput);
+    tempInput.focus();
+    tempInput.select();
+    const successful = document.execCommand('copy');
+    document.body.removeChild(tempInput);
+    if (successful) {
+      alert('초청장 링크가 클립보드에 복사되었습니다.\n원하는 곳에 붙여넣기(Ctrl+V)하세요.');
+      return;
+    }
+  } catch (err) {}
+
+  // 4. Prompt fallback
+  window.prompt('아래 주소를 복사(Ctrl+C)하여 공유하세요:', window.location.href);
 }
 </script>
 <!-- 배포 팁: 이 파일은 이미지가 모두 내장된 단일 HTML입니다. 홈페이지에 업로드 후 URL만 공유하면 됩니다. -->
